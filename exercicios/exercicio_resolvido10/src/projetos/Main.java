@@ -1,0 +1,43 @@
+package projetos;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+		int[][] mat = new int[N][N];
+		for (int i=0;i<N; i++) {
+			for(int j=0; j<N; j++) {
+				mat[i][j] = sc.nextInt();
+			}
+		}
+		System.out.println("DIAGONAL PRINCIPAL:");
+		int diagonalPrincipal = 0;
+		for (int i=0;i<N; i++) {
+			for(int j=0; j<N; j++) {
+				diagonalPrincipal = mat[i][i];
+			}
+			System.out.print(diagonalPrincipal + " ");
+		}
+				System.out.println();
+				
+				int contNegativos = 0;
+				for (int i=0;i<N; i++) {
+					for(int j=0; j<N; j++) {
+					if (mat[i][j] < 0) {
+					contNegativos = contNegativos + 1;
+					}
+					}
+					
+				}
+				System.out.println("QUANTIDADE DE NEGATIVOS = " + contNegativos);
+		
+		
+		
+		sc.close();
+	}
+
+}
